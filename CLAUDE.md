@@ -1,12 +1,10 @@
----
-alwaysApply: true
-description: Codebase Wide Standards
----
-# Overview
+# Claude.md
 
-This rule is a catch-all for codebase wide standards.
+## The product vision
 
-## File Structure
+The overall vision for this project is in [product-vision.md](./docs/product-vision.md). This doc is the source of truth for business requirements. Individual user prompts may override these requirements. If so, the vision doc should be updated.
+
+## Codebase Structure
 
 - All Next.js pages should be in the `src/app` directory.
 - Componets that are re-used across multiple pages should be in the `src/components` directory.
@@ -17,7 +15,7 @@ This rule is a catch-all for codebase wide standards.
 
 ## General Standards
 
-- Keep code DRY (Don't Repeat Yourself), do not repeat business logic in multiple place.  Do not repeat UI fragments in multiple places. Make reusable functions and components.
+- Keep code DRY (Don't Repeat Yourself), do not repeat business logic in multiple place. Do not repeat UI fragments in multiple places. Make reusable functions and components.
 - Maintain type safety by defining input and output types for functions and components (one exception is components do not need output types).
 
 ## Authentication Standards
@@ -57,14 +55,14 @@ We use Drizzle ORM for database operations and integration with Postgres and Neo
 
 Business logic functions should be in the `src/services` directory.
 
-- Services should call database functions, but nothing else should call them 
+- Services should call database functions, but nothing else should call them
 - Services should have unit tests, mocking external dependencies and only testing input and output. No need to test "was this function called with the correct input".
 - Services may take in an "unknown" type for the input and then use zod to validate the input.
 - The idea behind this is to put as much business logic in the service layer, so that if we ever want to change to a separate API layer, we can do so with minimal changes to the business logic.
 
 ## Styling Standards
 
-We use ShadCN's Component Library for styling. 
+We use ShadCN's Component Library for styling.
 
 - We should be use components from the library where possible, and avoid creating custom components unless absolutely necessary.
 - consult the [ShadCN Component Library](https://ui.shadcn.com/docs/components) for the available components.

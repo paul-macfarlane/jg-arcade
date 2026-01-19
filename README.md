@@ -67,3 +67,7 @@ pnpm run dev
 Generally speaking, all branches should be based on the `main` branch. Feature branches should be named like `feature/my-feature`m bug fixes should be named like `fix/my-bug`, chore changes should be named like `chore/my-chore`, and documentation changes should be named like `docs/my-documentation`. All changes must be made on a feature branch and then submitted as a pull request to the `main` branch in order to be merged.
 
 While not strictly enforced, it is recommended to following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for commit messages. This will help with generating release notes and changelogs.
+
+## Usage with AI tools
+
+To start, this codebase has a very simple integration with AI. It assumes you use Claude Code and has Codebase Standards all in [CLAUDE.md](CLAUDE.md). This may evolve as this repo evolves more.
